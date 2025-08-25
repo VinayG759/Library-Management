@@ -5,5 +5,6 @@ interface LoginInterface  {
 }
 
 interface AdminInterface{
-	
+	public void createTable();
+	public void addBook();
 }

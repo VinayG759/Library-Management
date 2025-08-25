@@ -14,26 +14,30 @@ public class Driver {
 			int password=login.login();
 			if(password==login.setpassword) {
 				System.out.println("Welcome Admin");
+				AdminImplementation adminimp=new AdminImplementation();
 				while(true) {
-					System.out.println("1. Add Book\n2. Remove Book\n3. Update Book\n4. List All Books\n5. Search Book\n6. Logout ");
+					System.out.println("1. Create Book Table\n2. Add Book\n3. Remove Book\n4. Update Book\n5. List All Books\n6. Search Book\n7. Logout ");
 					int adminchoice=scanner.nextInt();
 					switch(adminchoice) {
 					case 1:
-						//Addbook
+						adminimp.createTable();
 						break;
 					case 2:
-						//removebook
+						adminimp.addBook();
 						break;
 					case 3:
-						//updatebook
+						//removebook
 						break;
 					case 4:
-						//List
+						//updatebook
 						break;
 					case 5:
-						//search
+						//List
 						break;
 					case 6:
+						//search
+						break;
+					case 7:
 						System.out.println("Thank You");
 						System.exit(0);
 						break;
