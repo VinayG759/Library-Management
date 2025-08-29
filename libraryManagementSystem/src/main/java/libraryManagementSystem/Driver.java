@@ -13,9 +13,9 @@ public class Driver {
 			Login login=new Login();
 			int password=login.login();
 			if(password==login.setpassword) {
-				System.out.println("Welcome Admin");
 				AdminImplementation adminimp=new AdminImplementation();
 				while(true) {
+					System.out.println("\nWelcome Admin");
 					System.out.println("1. Create Book Table\n2. Add Book\n3. Remove Book\n4. Update Book\n5. List All Books\n6. Search Book\n7. Logout ");
 					int adminchoice=scanner.nextInt();
 					switch(adminchoice) {
@@ -26,16 +26,25 @@ public class Driver {
 						adminimp.addBook();
 						break;
 					case 3:
-						//removebook
+						adminimp.removeBook();
 						break;
 					case 4:
-						//updatebook
+						System.out.println("Update : \na. Book name\nb. Authur name");
+						char choice1=scanner.next().charAt(0);
+						switch(choice1) {
+						case 'a':
+							adminimp.updateBookName();
+							break;
+						case 'b':
+							adminimp.updateAuthurName();
+							break;
+						}
 						break;
 					case 5:
-						//List
+						adminimp.fetchList();
 						break;
 					case 6:
-						//search
+						adminimp.fetchSingleBook();
 						break;
 					case 7:
 						System.out.println("Thank You");
