@@ -4,7 +4,10 @@ interface AdminLoginInterface  {
 	public int login();
 }
 interface StudentVerificationInterface {
-	
+	public void availableBooks();
+	public void searchBook();
+	public void borrowBook();
+	public void returnBook();
 }
 
 interface AdminInterface{
