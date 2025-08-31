@@ -1,12 +1,23 @@
 package libraryManagementSystem;
 import java.util.Scanner;
-public class Login implements LoginInterface {
-	int setpassword=1234567890;
+class AdminLogin implements AdminLoginInterface {
+	int setAdminPassword=1234567890;
 	public int login() {
 		Scanner scanner=new Scanner(System.in);
 		
-		System.out.println("Enter password : ");
+		System.out.println("Enter Password : ");
 		int password=scanner.nextInt();
+		return password;
+	}
+	
+}
+class StudentVerification implements StudentVerificationInterface{
+	long setCollegePassword=8904127547L;
+	public long verification() {
+		Scanner scanner=new Scanner(System.in);
+		
+		System.out.println("Enter College Password : ");
+		long password=scanner.nextLong();
 		return password;
 	}
 }

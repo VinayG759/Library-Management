@@ -1,7 +1,10 @@
 package libraryManagementSystem;
 
-interface LoginInterface  {
+interface AdminLoginInterface  {
 	public int login();
+}
+interface StudentVerificationInterface {
+	
 }
 
 interface AdminInterface{
@@ -15,5 +18,6 @@ interface AdminInterface{
 }
 
 interface StudentInterface{
-	
+	public void availableBooks();
+	public void searchBook();
 }

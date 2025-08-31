@@ -10,9 +10,9 @@ public class Driver {
 		System.out.println("1. Admin\n2. Student");
 		int choice=scanner.nextInt();
 		if(choice==1) {
-			Login login=new Login();
-			int password=login.login();
-			if(password==login.setpassword) {
+			AdminLogin adminlogin=new AdminLogin();
+			int password=adminlogin.login();
+			if(password==adminlogin.setAdminPassword) {
 				AdminImplementation adminimp=new AdminImplementation();
 				while(true) {
 					System.out.println("\nWelcome Admin");
@@ -61,22 +61,30 @@ public class Driver {
 			
 		}
 		else if(choice==2) {
-			System.out.println("Hello, How may i help you?");
+			StudentImplementation studentimp=new StudentImplementation();
+			StudentVerification studentverify=new StudentVerification();
 			while(true){
-				System.out.println("1.View Available Books\n2. Search Book\n3. Borrow Book\n4. Return Book\n5. Logout");
+				System.out.println("Hello, How may i help you?");
+				System.out.println("1. View Available Books\n2. Search Book\n3. Borrow Book\n4. Return Book\n5. Logout");
 				int studentchoice=scanner.nextInt();
 				switch(studentchoice) {
 				case 1:
-					//View Available Books
+					studentimp.availableBooks();
 					break;
 				case 2:
-					//Search Book
+					studentimp.searchBook();
 					break;
 				case 3:
-					//Borrow Book
+					long password=studentverify.verification();
+					if(password==studentverify.setCollegePassword) {
+						System.out.println("Password verified");
+						studentimp.borrowBook();
+					}else {
+						System.out.println("Incorrect Password");
+					}
 					break;
 				case 4:
-					//Return Book
+					studentimp.returnBook();
 					break;
 				case 5:
 					System.out.println("Thank You");
